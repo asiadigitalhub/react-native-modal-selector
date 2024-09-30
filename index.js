@@ -68,6 +68,7 @@ const propTypes = {
     scrollViewAccessible: PropTypes.bool,
     scrollViewAccessibilityLabel: PropTypes.string,
     cancelButtonAccessibilityLabel: PropTypes.string,
+    openButtonAccessibilityLabel: PropTypes.any,
     passThruProps: PropTypes.object,
     selectTextPassThruProps: PropTypes.object,
     optionTextPassThruProps: PropTypes.object,
@@ -117,6 +118,7 @@ const defaultProps = {
     listItemAccessible: false,
     cancelButtonAccessible: false,
     scrollViewAccessible: false,
+    openButtonAccessibilityLabel:'',
     scrollViewAccessibilityLabel: undefined,
     cancelButtonAccessibilityLabel: undefined,
     passThruProps: {},
@@ -230,7 +232,7 @@ export default class ModalSelector extends React.Component {
                     activeOpacity={this.props.touchableActiveOpacity}
                     accessible={this.props.listItemAccessible}
                     accessibilityLabel={option.accessibilityLabel || undefined}
-                    importantForAccessibility={isFirstItem}
+                    //importantForAccessibility={true}
                     {...this.props.passThruProps}
                 >
                     <View
@@ -321,6 +323,7 @@ export default class ModalSelector extends React.Component {
                     this.props.customSelector
                     :
                     <TouchableOpacity
+                        {...this.props}
                         hitSlop={this.props.modalOpenerHitSlop}
                         activeOpacity={this.props.touchableActiveOpacity}
                         style={this.props.touchableStyle}
