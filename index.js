@@ -16,8 +16,6 @@ import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 import styles from './style'
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes
-
 let componentIndex = 0
 
 const propTypes = {
