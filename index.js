@@ -10,9 +10,9 @@ import {
     ScrollView,
     TouchableOpacity,
     TouchableWithoutFeedback,
-    Platform,
-    ViewPropTypes as RNViewPropTypes,
+    Platform
 } from 'react-native'
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 import styles from './style'
 
